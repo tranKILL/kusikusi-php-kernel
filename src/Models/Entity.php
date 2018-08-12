@@ -115,7 +115,7 @@ class Entity extends Model
     public static function getOne($id, $fields = [], $lang = NULL)
     {
         $lang = isset($lang) ? $lang : Config::get('general.langs')[0];
-        if (count($fields) === 0) {
+        if (empty($fields)) {
             $fields = ['entities.*', 'data.*', 'contents.*'];
         }
         $fieldsArray = is_array($fields) ? $fields : explode(',', $fields);
